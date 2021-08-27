@@ -507,7 +507,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61b3909d758bb75c79f23d4736fac9433868679d3ad2ea7a61e3c25cfda9a088"
 
 [[package]]
-name = "safecoin-bpf-helloworld"
+name = "safecoin-bpf-nihao"
 version = "0.0.1"
 dependencies = [
  "borsh",

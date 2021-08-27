@@ -1,10 +1,10 @@
 
 [package]
-name = "safecoin-bpf-helloworld"
+name = "safecoin-bpf-nihao"
 version = "0.0.1"
 description = "Example template program written in Rust"
 authors = ["Safecoin Maintainers <maintainers@safecoin.com>"]
-repository = "https://github.com/safecoin-labs/safecoin"
+repository = "https://github.com/Fair-Exchange/Safecoin"
 license = "Apache-2.0"
 homepage = "https://safecoin.com/"
 edition = "2018"
@@ -19,5 +19,5 @@ crypto-mac = "^0.11.1"
 safecoin-program = "=1.6.19"
 
  [lib]
-name = "helloworld"
+name = "nihao"
 crate-type = ["cdylib", "lib"]

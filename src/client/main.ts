@@ -6,7 +6,7 @@ import {
   establishConnection,
   establishPayer,
   checkProgram,
-  sayHello,
+  sayNiHao,
   reportGreetings,
 } from './hello_world';
 
