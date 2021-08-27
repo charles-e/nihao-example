@@ -13,7 +13,7 @@ interact with programs on the Safecoin blockchain.
 
 The project comprises of:
 
-* An on-chain hello world program
+* An on-chain Ni Hao (你好) program
 * A client that can send a "你好" to an account and get back the number of
   times "你好" has been sent
 
@@ -35,9 +35,9 @@ The project comprises of:
   - [Learn about the client](#learn-about-the-client)
     - [Entrypoint](#entrypoint)
     - [Establish a connection to the cluster](#establish-a-connection-to-the-cluster)
-    - [Load the helloworld on-chain program if not already loaded](#load-the-helloworld-on-chain-program-if-not-already-loaded)
-    - [Send a "Hello" transaction to the on-chain program](#send-a-hello-transaction-to-the-on-chain-program)
-    - [Query the Safecoin account used in the "Hello" transaction](#query-the-safecoin-account-used-in-the-hello-transaction)
+    - [Load the nihao on-chain program if not already loaded](#load-the-helloworld-on-chain-program-if-not-already-loaded)
+    - [Send a "你好" transaction to the on-chain program](#send-a-nihao-transaction-to-the-on-chain-program)
+    - [Query the Safecoin account used in the "你好" transaction](#query-the-safecoin-account-used-in-the-hello-transaction)
   - [Learn about the on-chain program](#learn-about-the-on-chain-program)
     - [Programming on Safecoin](#programming-on-Safecoin)
   - [Pointing to a public Safecoin cluster](#pointing-to-a-public-safecoin-cluster)
@@ -49,6 +49,7 @@ The following dependencies are required to build and run this example, depending
 on your OS, they may already be installed:
 
 - Install node (v14 recommended)
+- Because version 14 in pretty old, using nvm is recommended for installing npm
 - Install npm
 - Install the latest Rust stable from https://rustup.rs/
 - Install Safecoin v1.6.19 or later from
