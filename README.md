@@ -5,7 +5,7 @@
 </p>
 
 
-# Hello world on Safecoin
+# Ni Hao on Safecoin
 
 This project demonstrates how to use the [Safecoin Javascript
 API](https://github.com/Fair-Exchange/safecoin-web3.js) to
