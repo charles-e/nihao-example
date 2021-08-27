@@ -1,15 +1,9 @@
 <p align="center">
   <a href="https://safecoin.com">
-    <img alt="Safecoin" src="https://i.imgur.com/uBVzyX3.png" width="250" />
+    <img alt="Safecoin" src="https://github.com/Fair-Exchange/safecoinwiki/blob/master/Logos/SafeCoin/SafeCoin-Logo-with-text.png/" width="250" />
   </a>
 </p>
 
-[![Build status][travis-image]][travis-url] [![Gitpod
-Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Fair-Exchange/example-helloworld)
-
-[travis-image]:
-https://travis-ci.org/Fair-Exchange/example-helloworld.svg?branch=master
-[travis-url]: https://travis-ci.org/Fair-Exchange/example-helloworld
 
 # Hello world on Safecoin
 
@@ -20,8 +14,8 @@ interact with programs on the Safecoin blockchain.
 The project comprises of:
 
 * An on-chain hello world program
-* A client that can send a "hello" to an account and get back the number of
-  times "hello" has been sent
+* A client that can send a "你好" to an account and get back the number of
+  times "你好" has been sent
 
 ## Translations
 - [Traditional Chinese](README_ZH_TW.md)
@@ -51,19 +45,13 @@ The project comprises of:
 
 ## Quick Start
 
-[![Open in
-Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Fair-Exchange/example-helloworld)
-
-If you decide to open in Gitpod then refer to
-[README-gitpod.md](README-gitpod.md), otherwise continue reading.
-
 The following dependencies are required to build and run this example, depending
 on your OS, they may already be installed:
 
 - Install node (v14 recommended)
 - Install npm
 - Install the latest Rust stable from https://rustup.rs/
-- Install Safecoin v1.7.8 or later from
+- Install Safecoin v1.6.19 or later from
   https://docs.safecoin.com/cli/install-safecoin-cli-tools
 
 If this is your first time using Rust, these [Installation
@@ -138,13 +126,12 @@ $ npm run start
 Public key values will differ:
 
 ```bash
-Let's say hello to a Safecoin account...
-Connection to cluster established: http://localhost:8899 { 'feature-set': 2045430982, 'safecoin-core': '1.7.8' }
-Using account AiT1QgeYaK86Lf9kudqKthQPCWwpG8vFA1bAAioBoF4X containing 0.00141872 SOL to pay for fees
-Using program Dro9uk45fxMcKWGb1eWALujbTssh6DW8mb4x8x3Eq5h6
-Creating account 8MBmHtJvxpKdYhdw6yPpedp6X6y2U9dCpdYaZJdmwV3A to say hello to
-Saying hello to 8MBmHtJvxpKdYhdw6yPpedp6X6y2U9dCpdYaZJdmwV3A
-8MBmHtJvxpKdYhdw6yPpedp6X6y2U9dCpdYaZJdmwV3A has been greeted 1 times
+Let's say 你好 to a Safecoin account...
+Connection to cluster established: http://localhost:8328 { 'feature-set': 113641441, 'solana-core': '1.6.19' }
+Using account 4HgMxTAh8ytJTRGwiSir3cLgLfNUkM51UWXL2m893PNH containing 499.10058456 SAFE to  pay for fees
+Using program Dwna2xsheerXNAT7V2pGak9ffwvyKfKRKedH1qVpM3cM
+Saying 你好，to 7B5jk39tGnQ3upsHpWQbfrKCe6mJxWRzSo43jTc5fyD5
+7B5jk39tGnQ3upsHpWQbfrKCe6mJxWRzSo43jTc5fyD5 has been greeted 4 time(s)
 Success
 ```
 
