@@ -20,16 +20,16 @@ entrypoint!(process_instruction);
 
 // Program entrypoint's implementation
 pub fn process_instruction(
-    program_id: &Pubkey, // Public key of the account the hello world program was loaded into
-    accounts: &[AccountInfo], // The account to say hello to
-    _instruction_data: &[u8], // Ignored, all helloworld instructions are hellos
+    program_id: &Pubkey, // Public key of the account the 你好  program was loaded into
+    accounts: &[AccountInfo], // The account to say 你好 to
+    _instruction_data: &[u8], // Ignored, all 你好 instructions are 你好s
 ) -> ProgramResult {
-    msg!("Hello World Rust program entrypoint");
+    msg!("你好 Rust program entrypoint");
 
     // Iterating accounts is safer then indexing
     let accounts_iter = &mut accounts.iter();
 
-    // Get the account to say hello to
+    // Get the account to say 你好 to
     let account = next_account_info(accounts_iter)?;
 
     // The account must be owned by the program in order to modify its data

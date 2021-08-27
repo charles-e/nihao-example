@@ -38,7 +38,7 @@ let payer: Keypair;
 let programId: PublicKey;
 
 /**
- * The public key of the account we are saying hello to
+ * The public key of the account we are saying nihao to
  */
 let greetedPubkey: PublicKey;
 
@@ -53,16 +53,16 @@ const PROGRAM_PATH = path.resolve(__dirname, '../../dist/program');
  *   - `npm run build:program-c`
  *   - `npm run build:program-rust`
  */
-const PROGRAM_SO_PATH = path.join(PROGRAM_PATH, 'helloworld.so');
+const PROGRAM_SO_PATH = path.join(PROGRAM_PATH, 'nihao.so');
 
 /**
  * Path to the keypair of the deployed program.
- * This file is created when running `safecoin program deploy dist/program/helloworld.so`
+ * This file is created when running `safecoin program deploy dist/program/nihao.so`
  */
-const PROGRAM_KEYPAIR_PATH = path.join(PROGRAM_PATH, 'helloworld-keypair.json');
+const PROGRAM_KEYPAIR_PATH = path.join(PROGRAM_PATH, 'nihao-keypair.json');
 
 /**
- * The state of a greeting account managed by the hello world program
+ * The state of a greeting account managed by the nihao program
  */
 class GreetingAccount {
   counter = 0;
@@ -141,7 +141,7 @@ export async function establishPayer(): Promise<void> {
 }
 
 /**
- * Check if the hello world BPF program has been deployed
+ * Check if the nihao BPF program has been deployed
  */
 export async function checkProgram(): Promise<void> {
   // Read program id from keypair file
@@ -151,7 +151,7 @@ export async function checkProgram(): Promise<void> {
   } catch (err) {
     const errMsg = (err as Error).message;
     throw new Error(
-      `Failed to read program keypair at '${PROGRAM_KEYPAIR_PATH}' due to error: ${errMsg}. Program may need to be deployed with \`safecoin program deploy dist/program/helloworld.so\``,
+      `Failed to read program keypair at '${PROGRAM_KEYPAIR_PATH}' due to error: ${errMsg}. Program may need to be deployed with \`safecoin program deploy dist/program/nihao.so\``,
     );
   }
 
@@ -160,7 +160,7 @@ export async function checkProgram(): Promise<void> {
   if (programInfo === null) {
     if (fs.existsSync(PROGRAM_SO_PATH)) {
       throw new Error(
-        'Program needs to be deployed with `safecoin program deploy dist/program/helloworld.so`',
+        'Program needs to be deployed with `safecoin program deploy dist/program/nihao.so`',
       );
     } else {
       throw new Error('Program needs to be built and deployed');
@@ -171,7 +171,7 @@ export async function checkProgram(): Promise<void> {
   console.log(`Using program ${programId.toBase58()}`);
 
   // Derive the address (public key) of a greeting account from the program so that it's easy to find later.
-  const GREETING_SEED = 'hello';
+  const GREETING_SEED = '你好，世界';
   greetedPubkey = await PublicKey.createWithSeed(
     payer.publicKey,
     GREETING_SEED,
@@ -184,7 +184,7 @@ export async function checkProgram(): Promise<void> {
     console.log(
       'Creating account',
       greetedPubkey.toBase58(),
-      'to say hello to',
+      'to say nihao to',
     );
     const lamports = await connection.getMinimumBalanceForRentExemption(
       GREETING_SIZE,
@@ -206,14 +206,14 @@ export async function checkProgram(): Promise<void> {
 }
 
 /**
- * Say hello
+ * Say nihao
  */
-export async function sayHello(): Promise<void> {
-  console.log('Saying hello to', greetedPubkey.toBase58());
+export async function sayNiHao(): Promise<void> {
+  console.log('Saying 你好，to', greetedPubkey.toBase58());
   const instruction = new TransactionInstruction({
     keys: [{pubkey: greetedPubkey, isSigner: false, isWritable: true}],
     programId,
-    data: Buffer.alloc(0), // All instructions are hellos
+    data: Buffer.alloc(0), // All instructions are nihaos
   });
   await sendAndConfirmTransaction(
     connection,
@@ -223,7 +223,7 @@ export async function sayHello(): Promise<void> {
 }
 
 /**
- * Report the number of times the greeted account has been said hello to
+ * Report the number of times the greeted account has been said nihao to
  */
 export async function reportGreetings(): Promise<void> {
   const accountInfo = await connection.getAccountInfo(greetedPubkey);

@@ -1,21 +1,21 @@
 <p align="center">
-  <a href="https://solana.com">
-    <img alt="Solana" src="https://i.imgur.com/uBVzyX3.png" width="250" />
+  <a href="https://safecoin.com">
+    <img alt="Safecoin" src="https://i.imgur.com/uBVzyX3.png" width="250" />
   </a>
 </p>
 
 [![Build status][travis-image]][travis-url] [![Gitpod
-Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/solana-labs/example-helloworld)
+Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Fair-Exchange/example-helloworld)
 
 [travis-image]:
-https://travis-ci.org/solana-labs/example-helloworld.svg?branch=master
-[travis-url]: https://travis-ci.org/solana-labs/example-helloworld
+https://travis-ci.org/Fair-Exchange/example-helloworld.svg?branch=master
+[travis-url]: https://travis-ci.org/Fair-Exchange/example-helloworld
 
-# Hello world on Solana
+# Hello world on Safecoin
 
-This project demonstrates how to use the [Solana Javascript
-API](https://github.com/solana-labs/solana-web3.js) to
-interact with programs on the Solana blockchain.
+This project demonstrates how to use the [Safecoin Javascript
+API](https://github.com/Fair-Exchange/safecoin-web3.js) to
+interact with programs on the Safecoin blockchain.
 
 The project comprises of:
 
@@ -28,31 +28,31 @@ The project comprises of:
 - [Simplified Chinese](README_ZH_CN.md)
 
 ## Table of Contents
-- [Hello world on Solana](#hello-world-on-solana)
+- [Hello world on Safecoin](#hello-world-on-safecoin)
   - [Table of Contents](#table-of-contents)
   - [Quick Start](#quick-start)
-    - [Start local Solana cluster](#start-local-solana-cluster)
+    - [Start local Safecoin cluster](#start-local-safecoin-cluster)
     - [Build the on-chain program](#build-the-on-chain-program)
     - [Run the client](#run-the-client)
     - [Expected output](#expected-output)
       - [Not seeing the expected output?](#not-seeing-the-expected-output)
     - [Customizing the Program](#customizing-the-program)
-  - [Learn about Solana](#learn-about-solana)
+  - [Learn about Safecoin](#learn-about-safecoin)
   - [Learn about the client](#learn-about-the-client)
     - [Entrypoint](#entrypoint)
     - [Establish a connection to the cluster](#establish-a-connection-to-the-cluster)
     - [Load the helloworld on-chain program if not already loaded](#load-the-helloworld-on-chain-program-if-not-already-loaded)
     - [Send a "Hello" transaction to the on-chain program](#send-a-hello-transaction-to-the-on-chain-program)
-    - [Query the Solana account used in the "Hello" transaction](#query-the-solana-account-used-in-the-hello-transaction)
+    - [Query the Safecoin account used in the "Hello" transaction](#query-the-safecoin-account-used-in-the-hello-transaction)
   - [Learn about the on-chain program](#learn-about-the-on-chain-program)
-    - [Programming on Solana](#programming-on-Solana)
-  - [Pointing to a public Solana cluster](#pointing-to-a-public-solana-cluster)
+    - [Programming on Safecoin](#programming-on-Safecoin)
+  - [Pointing to a public Safecoin cluster](#pointing-to-a-public-safecoin-cluster)
   - [Expand your skills with advanced examples](#expand-your-skills-with-advanced-examples)
 
 ## Quick Start
 
 [![Open in
-Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/solana-labs/example-helloworld)
+Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Fair-Exchange/example-helloworld)
 
 If you decide to open in Gitpod then refer to
 [README-gitpod.md](README-gitpod.md), otherwise continue reading.
@@ -63,8 +63,8 @@ on your OS, they may already be installed:
 - Install node (v14 recommended)
 - Install npm
 - Install the latest Rust stable from https://rustup.rs/
-- Install Solana v1.7.8 or later from
-  https://docs.solana.com/cli/install-solana-cli-tools
+- Install Safecoin v1.7.8 or later from
+  https://docs.safecoin.com/cli/install-safecoin-cli-tools
 
 If this is your first time using Rust, these [Installation
 Notes](README-installation-notes.md) might be helpful.
@@ -76,30 +76,30 @@ Notes](README-installation-notes.md) might be helpful.
 1. Set CLI config url to localhost cluster
 
 ```bash
-$ solana config set --url localhost
+$ safecoin config set --url localhost
 ```
 
 2. Create CLI Keypair
 
-If this is your first time using the Solana CLI, you will need to generate a new keypair:
+If this is your first time using the Safecoin CLI, you will need to generate a new keypair:
 
 ```bash
-$ solana-keygen new
+$ safecoin-keygen new
 ```
 
-### Start local Solana cluster
+### Start local Safecoin cluster
 
-This example connects to a local Solana cluster by default.
+This example connects to a local Safecoin cluster by default.
 
-Start a local Solana cluster:
+Start a local Safecoin cluster:
 ```bash
-$ solana-test-validator
+$ safecoin-test-validator
 ```
-> **Note**: You may need to do some [system tuning](https://docs.solana.com/running-validator/validator-start#system-tuning) (and restart your computer) to get the validator to run
+> **Note**: You may need to do some [system tuning](https://docs.safecoin.com/running-validator/validator-start#system-tuning) (and restart your computer) to get the validator to run
 
 Listen to transaction logs:
 ```bash
-$ solana logs
+$ safecoin logs
 ```
 
 ### Install npm dependencies
@@ -124,7 +124,7 @@ $ npm run build:program-c
 ### Deploy the on-chain program
 
 ```bash
-$ solana program deploy dist/program/helloworld.so
+$ safecoin program deploy dist/program/helloworld.so
 ```
 
 ### Run the JavaScript client
@@ -138,8 +138,8 @@ $ npm run start
 Public key values will differ:
 
 ```bash
-Let's say hello to a Solana account...
-Connection to cluster established: http://localhost:8899 { 'feature-set': 2045430982, 'solana-core': '1.7.8' }
+Let's say hello to a Safecoin account...
+Connection to cluster established: http://localhost:8899 { 'feature-set': 2045430982, 'safecoin-core': '1.7.8' }
 Using account AiT1QgeYaK86Lf9kudqKthQPCWwpG8vFA1bAAioBoF4X containing 0.00141872 SOL to pay for fees
 Using program Dro9uk45fxMcKWGb1eWALujbTssh6DW8mb4x8x3Eq5h6
 Creating account 8MBmHtJvxpKdYhdw6yPpedp6X6y2U9dCpdYaZJdmwV3A to say hello to
@@ -150,9 +150,9 @@ Success
 
 #### Not seeing the expected output?
 
-- Ensure you've [started the local cluster](#start-local-solana-cluster),
+- Ensure you've [started the local cluster](#start-local-safecoin-cluster),
   [built the on-chain program](#build-the-on-chain-program) and [deployed the program to the cluster](#deploy-the-on-chain-program).
-- Inspect the program logs by running `solana logs` to see why the program failed.
+- Inspect the program logs by running `safecoin logs` to see why the program failed.
   - ```bash
     Transaction executed in slot 5621:
     Signature: 4pya5iyvNfAZj9sVWHzByrxdKB84uA5sCxLceBwr9UyuETX2QwnKg56MgBKWSM4breVRzHmpb1EZQXFPPmJnEtsJ
@@ -172,40 +172,40 @@ any files under `/src/program-rust` or `/src/program-c` you will need to
 
 Now when you rerun `npm run start`, you should see the results of your changes.
 
-## Learn about Solana
+## Learn about Safecoin
 
-More information about how Solana works is available in the [Solana
-documentation](https://docs.solana.com/) and all the source code is available on
-[github](https://github.com/solana-labs/solana)
+More information about how Safecoin works is available in the [Safecoin
+documentation](https://docs.safecoin.com/) and all the source code is available on
+[github](https://github.com/Fair-Exchange/safecoin)
 
 Further questions? Visit us on [Discord](https://discordapp.com/invite/pquxPsq)
 
 ## Learn about the client
 
 The client in this example is written in TypeScript using:
-- [Solana web3.js SDK](https://github.com/solana-labs/solana-web3.js)
-- [Solana web3 API](https://solana-labs.github.io/solana-web3.js)
+- [Safecoin web3.js SDK](https://github.com/Fair-Exchange/safecoin-web3.js)
+- [Safecoin web3 API](https://Fair-Exchange.github.io/safecoin-web3.js)
 
 ### Entrypoint
 
 The [client's
-entrypoint](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/main.ts#L13)
+entrypoint](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/main.ts#L13)
 does five things.
 
 ### Establish a connection to the cluster
 
 The client establishes a connection with the cluster by calling
-[`establishConnection`](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L92).
+[`establishConnection`](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L92).
 
 ### Establish an account to pay for transactions
 
 The client ensures there is an account available to pay for transactions,
 and creates one if there is not, by calling
-[`establishPayer`](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L102).
+[`establishPayer`](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L102).
 
 ### Check if the helloworld on-chain program has been deployed
 
-In [`checkProgram`](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L144),
+In [`checkProgram`](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L144),
 the client loads the keypair of the deployed program from `./dist/program/helloworld-keypair.json` and uses
 the public key for the keypair to fetch the program account. If the program doesn't exist, the client halts
 with an error. If the program does exist, it will create a new account with the program assigned as its owner
@@ -215,18 +215,18 @@ to store program state (number of hello's processed).
 
 The client then constructs and sends a "Hello" transaction to the program by
 calling
-[`sayHello`](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L209).
+[`sayHello`](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L209).
 The transaction contains a single very simple instruction that primarily carries
 the public key of the helloworld program account to call and the "greeter"
 account to which the client wishes to say "Hello" to.
 
-### Query the Solana account used in the "Hello" transaction
+### Query the Safecoin account used in the "Hello" transaction
 
 Each time the client says "Hello" to an account, the program increments a
 numerical count in the "greeter" account's data.  The client queries the
 "greeter" account's data to discover the current number of times the account has
 been greeted by calling
-[`reportGreetings`](https://github.com/solana-labs/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L226).
+[`reportGreetings`](https://github.com/Fair-Exchange/example-helloworld/blob/ad52dc719cdc96d45ad8e308e8759abf4792b667/src/client/hello_world.ts#L226).
 
 ## Learn about the on-chain program
 
@@ -237,33 +237,33 @@ compiled to [Berkley Packet Format
 object](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format).
 
 The program is written using:
-- [Solana Rust SDK](https://github.com/solana-labs/solana/tree/master/sdk)
+- [Safecoin Rust SDK](https://github.com/Fair-Exchange/safecoin/tree/master/sdk)
 
-### Programming on Solana
+### Programming on Safecoin
 
-To learn more about Solana programming model refer to the [Programming Model
-Overview](https://docs.solana.com/developing/programming-model/overview).
+To learn more about Safecoin programming model refer to the [Programming Model
+Overview](https://docs.safecoin.com/developing/programming-model/overview).
 
-To learn more about developing programs on Solana refer to the [On-Chain 
-Programs Overview](https://docs.solana.com/developing/on-chain-programs/overview)
+To learn more about developing programs on Safecoin refer to the [On-Chain 
+Programs Overview](https://docs.safecoin.com/developing/on-chain-programs/overview)
 
-## Pointing to a public Solana cluster
+## Pointing to a public Safecoin cluster
 
-Solana maintains three public clusters:
+Safecoin maintains three public clusters:
 - `devnet` - Development cluster with airdrops enabled
 - `testnet` - Tour De Sol test cluster without airdrops enabled
 - `mainnet-beta` -  Main cluster
 
-Use the Solana CLI to configure which cluster to connect to.
+Use the Safecoin CLI to configure which cluster to connect to.
 
 To point to `devnet`:
 ```bash
-$ solana config set --url devnet
+$ safecoin config set --url devnet
 ```
 
 To point back to the local cluster:
 ```bash
-$ solana config set --url localhost
+$ safecoin config set --url localhost
 ```
 
 ## Expand your skills with advanced examples
@@ -273,8 +273,8 @@ features like custom errors, advanced account handling, suggestions for data
 serialization, benchmarking, etc...
 
 - [Programming
-  Examples](https://github.com/solana-labs/solana-program-library/tree/master/examples)
+  Examples](https://github.com/Fair-Exchange/safecoin-program-library/tree/master/examples)
 - [Token
-  Program](https://github.com/solana-labs/solana-program-library/tree/master/token)
+  Program](https://github.com/Fair-Exchange/safecoin-program-library/tree/master/token)
 - [Token Swap
-  Program](https://github.com/solana-labs/solana-program-library/tree/master/token-swap)
+  Program](https://github.com/Fair-Exchange/safecoin-program-library/tree/master/token-swap)
