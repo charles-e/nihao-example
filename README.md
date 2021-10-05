@@ -113,7 +113,7 @@ $ npm run build:program-c
 ### Deploy the on-chain program
 
 ```bash
-$ safecoin program deploy dist/program/helloworld.so
+$ safecoin program deploy dist/program/nihao.so
 ```
 
 ### Run the JavaScript client
