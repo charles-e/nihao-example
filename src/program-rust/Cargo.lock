@@ -47,6 +47,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
 
 [[package]]
+name = "base64"
+version = "0.12.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3441f0f7b02788e948e47f457ca01f1d7e6d92c693bc132c22b087d3141c03ff"
+
+[[package]]
 name = "bincode"
 version = "1.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -148,6 +154,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "bytemuck"
+version = "1.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72957246c41db82b8ef88a5486143830adeb8227ef9837740bdec67724cf2c5b"
+dependencies = [
+ "bytemuck_derive",
+]
+
+[[package]]
+name = "bytemuck_derive"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8e215f8c2f9f79cb53c8335e687ffd07d5bfcb6fe5fc80723762d0be46e7cc54"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "byteorder"
 version = "1.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -185,6 +211,12 @@ checksum = "ed00c67cb5d0a7d64a44f6ad2668db7e7530311dd53ea79bcd4fb022c64911c8"
 dependencies = [
  "libc",
 ]
+
+[[package]]
+name = "crunchy"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
 
 [[package]]
 name = "crypto-mac"
@@ -318,6 +350,27 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
+name = "hmac"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "126888268dcc288495a26bf004b38c5fdbb31682f992c84ceb046a1f0fe38840"
+dependencies = [
+ "crypto-mac 0.8.0",
+ "digest 0.9.0",
+]
+
+[[package]]
+name = "hmac-drbg"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17ea0a1394df5b6574da6e0c1ade9e78868c9fb0a4e5ef4428e32da4676b85b1"
+dependencies = [
+ "digest 0.9.0",
+ "generic-array 0.14.4",
+ "hmac",
+]
+
+[[package]]
 name = "humantime"
 version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -349,6 +402,54 @@ name = "libc"
 version = "0.2.97"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12b8adadd720df158f4d70dfe7ccc6adb0472d7c55ca83445f6a5ab3e36f8fb6"
+
+[[package]]
+name = "libsecp256k1"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bd1137239ab33b41aa9637a88a28249e5e70c40a42ccc92db7f12cc356c1fcd7"
+dependencies = [
+ "arrayref",
+ "base64",
+ "digest 0.9.0",
+ "hmac-drbg",
+ "libsecp256k1-core",
+ "libsecp256k1-gen-ecmult",
+ "libsecp256k1-gen-genmult",
+ "rand",
+ "serde",
+ "sha2",
+ "typenum",
+]
+
+[[package]]
+name = "libsecp256k1-core"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d0f6ab710cec28cef759c5f18671a27dae2a5f952cdaaee1d8e2908cb2478a80"
+dependencies = [
+ "crunchy",
+ "digest 0.9.0",
+ "subtle",
+]
+
+[[package]]
+name = "libsecp256k1-gen-ecmult"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ccab96b584d38fac86a83f07e659f0deafd0253dc096dab5a36d53efe653c5c3"
+dependencies = [
+ "libsecp256k1-core",
+]
+
+[[package]]
+name = "libsecp256k1-gen-genmult"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67abfe149395e3aa1c48a2beb32b068e2334402df8181f818d3aee2b304c4f5d"
+dependencies = [
+ "libsecp256k1-core",
+]
 
 [[package]]
 name = "log"
@@ -518,9 +619,9 @@ dependencies = [
 
 [[package]]
 name = "safecoin-frozen-abi"
-version = "1.6.19"
+version = "1.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2c428ee03b05ecbe4aa54cb245542b6c74ce72d57ca3aae79a8da186ed2c041"
+checksum = "53f8fcd70678519d0c4ada5f3508892bcfcc7c88d07f53243702603dce780f08"
 dependencies = [
  "bs58",
  "bv",
@@ -538,11 +639,10 @@ dependencies = [
 
 [[package]]
 name = "safecoin-frozen-abi-macro"
-version = "1.6.19"
+version = "1.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a4c0e13865b83b712937936c5e3a84769a108dedc7bfd254a2e4a9044b2b3dfe"
+checksum = "b3cf052462ad81dff64f0f3993204ccde13bc389cf63e7b82fb07932d2e23ef0"
 dependencies = [
- "lazy_static",
  "proc-macro2",
  "quote",
  "rustc_version",
@@ -551,9 +651,9 @@ dependencies = [
 
 [[package]]
 name = "safecoin-logger"
-version = "1.6.18"
+version = "1.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ace9475fca7cb400ceec74b6ff31b76865ce04bf48d6e69c3cd011b1d87c7ae5"
+checksum = "7f18b525936c12d66b4a3e3d1088d2a4340211298d8dc523d839969a2eb8f913"
 dependencies = [
  "env_logger",
  "lazy_static",
@@ -562,9 +662,9 @@ dependencies = [
 
 [[package]]
 name = "safecoin-program"
-version = "1.6.19"
+version = "1.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f6727d83e9b18c49e8ee9fadb8baea0afd94da30997a16578d7e01d890e2fd2"
+checksum = "da45680864906adefe0b9626c882b1b378f1af9ff1920ea82d9f81f9e340ab86"
 dependencies = [
  "bincode",
  "blake3",
@@ -572,10 +672,12 @@ dependencies = [
  "borsh-derive",
  "bs58",
  "bv",
+ "bytemuck",
  "curve25519-dalek",
  "hex",
  "itertools",
  "lazy_static",
+ "libsecp256k1",
  "log",
  "num-derive",
  "num-traits",
@@ -596,9 +698,9 @@ dependencies = [
 
 [[package]]
 name = "safecoin-sdk-macro"
-version = "1.6.18"
+version = "1.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "257424dfa34aff2ececcd523a89dbb8a29488b7c559aa3151a97de0ba2019b96"
+checksum = "e416bf5568377831c083e6da462b3f52959f4801ebaa6c21c6234533bfe3de10"
 dependencies = [
  "bs58",
  "proc-macro2",
